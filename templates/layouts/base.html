@@ -1,0 +1,30 @@
+{% load static %}
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+</head>
+<body>
+    {% block nav %}{% endblock nav %}
+    
+    {% block content %}{% endblock content %}
+
+    <script src="https://unpkg.com/material-components-web@0.8.0/dist/material-components-web.min.js"></script>
+
+    <script>
+        var buttons = document.querySelectorAll('.mdc-button');
+        for (var i = 0, button; button = buttons[i]; i++) {
+            mdc.ripple.MDCRipple.attachTo(button);
+        }
+    </script>
+</body>
+</html>

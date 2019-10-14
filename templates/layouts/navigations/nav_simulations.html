@@ -1,0 +1,22 @@
+{% load static %}
+
+{% block nav %}
+    <span class="nav">
+        <div class="top-navbar"></div>
+        <span class="navbar">
+            <a href="#" class="navbar-brand">MB</a>
+
+            <span class="nav-list">
+                <a class="nav-link nav1" href="{% url 'home' %}">Accueil</a>
+                <a class="nav-link nav2" href="{% url 'blog:index' %}">Saviez-vous</a>
+                <a class="nav-link nav3" href="{% url 'maths:index' %}">Maths</a>
+                <a class="active-link nav-link nav4" href="#">Simulations</a>
+                <a class="nav-link nav5" href="{% url 'contact' %}">Contact</a>
+                <a class="nav-link nav6" href="{% url 'about' %}">A propos</a>
+            </span>
+        </span>
+
+        <div class="nav-limit-height"></div>
+    </span>
+{% endblock nav %}
+     

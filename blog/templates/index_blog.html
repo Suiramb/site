@@ -1,0 +1,30 @@
+{% extends 'layouts/base.html' %}
+
+{% block nav %}
+    {% include 'layouts/navigations/nav_blog.html' %}
+{% endblock nav %}
+
+{% block content %}
+    <h1 class="blog-title">Savez-vous</h1>
+
+    {% for post in posts %}
+        <article class="article-menu">
+            <h2><a href="{% url 'blog:show' post.id %}">#{{ post.id }} - {{ post.title|upper }}</a></h2>
+
+            {% if not forloop.last %}   
+                <br>
+            {% endif %}
+            <!--<ul class="appreciation">
+                <li><a href="#" class="heart"></a></li>
+                <li><a href="#" class="tick"></a></li>
+                <li><a href="#" class="cross"></a></li>
+            </ul>-->
+        </article>
+    {% empty %}
+        <h2>Désolé, aucun article ici</h2>
+    {% endfor %}
+        
+            
+        
+        
+{% endblock content %}

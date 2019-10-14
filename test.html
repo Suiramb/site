@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <div class="myTestClass">Text 0
+        <div>Text 1</div>
+        <span>Text 1</span>
+        <div>Text 1
+            <p>Text 2</p>
+            <div>Text 2</div>
+        </div>
+        <p>Text 1</p>
+    </div>
+    <div>Text 0</div>
+</div>
+
+<style>
+.wrapper * {
+    color: blue;
+    margin: 0 100px; /* Only for demo */
+}
+.myTestClass > * {
+    color:red;
+    margin: 0 20px;
+}
+</style>

@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html' %}
+
+{% block nav %}
+    <div id="wrapper" class="wrapper-home">
+{% include 'layouts/navigations/nav_home.html' %}
+{% endblock nav %}
+
+{% block content %}
+        <div class="title home-title homepage-menu no-bg">
+            <h1>Bienvenue sur mon site</h1>
+        </div>
+        <div class="home-content homepage-menu">
+            <p>Salut ! Ca c'est mon site</p>
+        </div>
+        <div id="slider" class="slider-home homepage-menu">
+            <figure>
+                <div class="slider-element"><img src="/static/images/image1.jpg" alt="image_1"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam sint distinctio cum perspiciatis, magnam, dicta molestiae adipisci alias laboriosam aperiam debitis mollitia laudantium quis! Mollitia, reprehenderit deleniti. Saepe, sapiente.</p></div>
+                <div class="slider-element"><img src="/static/images/image2.jpg" alt="image_2"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem error labore animi velit eius, accusantium assumenda minima dignissimos facilis sequi, natus vel fugiat fuga doloremque saepe dolore. Recusandae, magnam non!</p></div>
+                <div class="slider-element"><img src="/static/images/image3.jpg" alt="image_3"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, nihil? Eos, dolore autem itaque unde dolorem recusandae inventore excepturi iste a voluptatum ipsam minima reprehenderit totam! Sunt illum aspernatur modi!</p></div>
+                <div class="slider-element"><img src="/static/images/image2.jpg" alt="image_2"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi magni in alias totam obcaecati voluptate quae suscipit eum assumenda commodi consectetur modi reprehenderit aperiam, fugiat cupiditate odio eveniet numquam optio.</p></div>
+                <div class="slider-element"><img src="/static/images/image1.jpg" alt="image_1"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem dignissimos veniam laboriosam, culpa cum necessitatibus nostrum consectetur ab quam dolorum vitae placeat ut reprehenderit dolorem doloribus voluptatibus rem accusantium? Modi.</p></div>
+            </figure>
+        </div>
+        <div id="others-recommandations" class="homepage-menu">
+            <p>MDRMDRMDRMDR</p>
+        </div>
+        <div id="maths-recommandations" class="homepage-menu">
+            <p>LOLOLOLOLOL</p>
+        </div>
+
+        {% include 'layouts/footer.html' %}
+    </div>
+{% endblock content %}

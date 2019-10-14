@@ -1,0 +1,313 @@
+$primary-color: #1976d2
+$primary-color-dark: #004ba0
+$light-grey: #E1E2E1
+$very-light-grey: #F5F5F6
+$error-color: #B00020
+
+$mdc-theme-primary: #1976d2
+$mdc-theme-on-primary: #ffffff
+$mdc-theme-secondary: #004ba0
+$mdc-theme-on-secondary: #ffffff
+
+@import "node_modules/@material/button/mdc-button"
+@import "node_modules/@material/elevation/mdc-elevation"
+@import "node_modules/@material/ripple/mdc-ripple"	
+
+body
+	font-family: 'Roboto Slab', sans-serif
+	/* background-image: linear-gradient(135deg, #aaaaaa, #000000) */
+	background-color: $light-grey
+	background-repeat: no-repeat
+	background-position: 100% 100%
+	background-size: cover	
+
+	& #wrapper
+		display: grid
+		grid-gap: 4px
+		grid-template-columns: repeat(12, [col] 1fr)
+		width: 100%
+		height: 100%
+
+		&.wrapper-home
+			grid-template-rows: [navbar-start] 50px [navbar-end] 50px [row] 1fr [row] 1fr [footer-start] 50px [footer-end]
+
+
+
+[type~="button"]
+	width: 100px
+	margin: 3px
+	justify-self: center
+	align-self: center
+
+.mdc-button--raised, .mdc-button-unelevated
+	&:not(:disabled)
+		color: #fff
+		background-color: $primary-color
+	
+	&::before, &::after
+		background-color: #fff
+
+.mdc-button--outlined:not(:disabled)
+	color: $primary-color
+	border-color: $primary-color
+
+i
+	display: flex
+	justify-self: center
+
+.blog-title
+	grid-column: col / col 3
+
+
+.article-menu 
+	grid-column: col 3 / col 12
+	grid-row: auto
+
+hr 
+	grid-column: col / col 12
+	background-color: #ffffff
+
+a
+	display: inline-block
+	font-style: normal
+	text-decoration: none
+	color: #000000
+
+	a.underline:hover 
+		text-decoration: underline
+
+.nav
+	grid-column: col / span 12
+	grid-row: navbar-start / navbar-end
+	position: sticky
+	top: 0
+
+.navbar-brand 
+	font-size: 26px
+	text-decoration: none
+	font-style: normal
+	align-self: center
+	justify-self: center
+	
+	& img
+		height: 80%	
+
+
+.nav-limit-height 
+	content: ""
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), transparent)
+	grid-row: navbar-end
+	grid-column: col / span 12
+	width: calc(100vw)
+	height: 7px
+	align-self: start
+	z-index: 10	
+
+.navbar
+	background-color: #333333
+	z-index: 5
+	display: grid
+	grid-template-columns: repeat(12, [col-nav] 1fr)
+	grid-template-rows: [row-nav-start] 50px [row-nav-end]
+	grid-gap: 10px
+	font-family: 'Rubik'
+
+	& *
+		color: #fff
+
+.nav-list
+	grid-column: col-nav 2 / span 10
+	grid-row: row-nav-start / row-nav-end
+	justify-self: center
+
+.nav-link
+	width: fit-content 
+	font-style: normal
+	align-self: center
+	padding: 12px 1vw 10px
+	position: relative
+	top: 8px
+
+	&:hover 
+		text-decoration: none
+		color: $primary-color
+
+	&.active-link
+		color: $primary-color
+
+	// 	a
+		&:not(.active-link)::after
+		transform: rotate(360deg)
+		content: ""
+		display: block
+		width: 100%
+		height: 0px
+		transform: scale(1, 0)
+		transition-duration: 0.3s
+		transition-timing-function: linear
+		top: 6px
+		*
+		&:not(.active-link):hover::after 
+		transform: rotate(0deg)
+		height: 5px
+		width: 100%
+		transform: scale(1, 1)
+		background-color: $primary-color-dark
+		*
+		&.active-link 
+		font-weight: bold
+		*
+		&::after 
+		background-color: $primary-color
+		content: ""
+		display: block
+		width: 100%
+		height: 5px
+
+.footer 
+	grid-column: col / span 12
+	grid-row: footer-start / footer-end
+	text-align: center
+	color: #000
+
+ul.appreciation 
+	list-style: none
+	position: relative
+	width: auto
+	left: calc(4*(88%/12) - 7%)
+	bottom: 120px
+
+	&, & li
+		width: 100px
+		margin: 0
+
+
+.heart
+	&::after 
+		content: "❤"
+		font-style: normal
+		font-size: 25
+
+	&:hover 
+		color: #f77777
+		text-shadow: 0px 0px 6px #f77777
+		text-decoration: none
+
+
+.tick
+	&::after 
+		content: "✔"
+		font-style: normal
+		font-size: 25
+
+	&:hover 
+		color: #00ff00
+		text-shadow: 0px 0px 6px #00ff00
+		text-decoration: none
+
+
+.cross
+	&::after 
+		content: "✘"
+		font-style: normal
+		font-size: 25
+
+	&:hover 
+		color: #ff0000
+		text-shadow: 0px 0px 6px #ff0000
+		text-decoration: none
+	
+.post-image
+	grid-column: col 9 / col 12
+	width: calc(calc(100vw - 16px)/ 3)
+	
+.post-content
+	grid-column: col / col 9
+	font-size: 1rem
+	line-height: 1.5rem
+
+.post-title
+	grid-column: col / col 12
+
+.home-title
+	grid-column: col / span 12
+	grid-row: 2
+
+$counter: 5
+
+//  @keyframes slider-anim
+	@for $i from 1 through $counter
+	$percent: 100% / $counter * ($i - 1)
+	#{$percent}
+	left: -(100% * $i)
+
+@keyframes slider-anim	
+	0%
+		left: 0%
+	20%
+		left: 0%
+	25%
+		left: -100%
+	45% 
+		left: -100%
+	50%
+		left: -200%
+	70%
+		left: -200%
+	75%
+		left: -300%
+	95%
+		left: -300%
+	100%
+		left: -400%
+
+#slider
+	overflow: hidden
+	justify-items: stretch
+
+	&.slider-home
+		grid-column: col / span 4
+		grid-row: row / span 2
+
+	& figure
+		position: relative
+		width: 100% * $counter
+		margin: 0
+		left: 0
+		text-align: left
+		font-size: 1em
+		animation: ($counter * 10s) slider-anim infinite
+
+		& .slider-element
+			width: 100% / $counter
+			height: 100%
+			float: left
+
+			& img
+				width: 100%
+				height: 100% * 9 / 16
+
+.home-content
+	grid-column: col 5 / span 5
+
+#others-recommandations
+	grid-column: col 10 / span 3
+
+#maths-recommandations
+	grid-column: col 5 / span 8
+	grid-row: row 2 
+
+.homepage-menu
+	background-color: #eeeeee
+	border-radius: 5px
+	text-align: center
+
+	p
+		color: #000000
+
+	h1
+		color: #000000
+		margin: 8 0
+
+	&.no-bg
+		background-color: transparent

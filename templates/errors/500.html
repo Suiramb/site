@@ -1,0 +1,9 @@
+{% extends 'layouts/base.html' %}
+
+{% block title%}MB | Erreur500{% endblock title%}
+
+{% block content %}
+    <h1>Erreur 500</h1>
+
+    <p>Désolé, c'est totalement ma faute. Essaye de retourner à la <a href="{% url 'home' %}">page d'acceuil</a>.</p>
+{% endblock content %}
